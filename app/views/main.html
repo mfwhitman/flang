@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1>Flang</h1>
+  <p class="lead">
+    Search through Flickr and check EXIF data.
+  </p>
+</div>
+
+<div ng-controller="MainCtrl">
+
+  <div class="input-group">
+    <span class="input-group-addon">Search</span>
+      <input type="text" class="form-control" placeholder="Search" ng-model="query" ng-keyup="search()">
+  </div>
+
+  <hr>
+  <div class="alert alert-info" role="alert" ng-show="status">
+    {{statusMessage}}
+  </div>
+
+  <div class="row" ng-repeat="photo in retrievedPhotos">
+      <div class="titletext">
+        {{ photo.title }}
+      </div>
+
+      <img class="searched" ng-src="{{ photo.url_z }}" ng-click="info(photo.id, photo.secret)"
+          alt="{{ photo.title }}" />
+
+  </div>
+
+</div>

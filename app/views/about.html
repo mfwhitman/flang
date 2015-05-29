@@ -1,0 +1,18 @@
+<div class="row">
+  <img class="aboutphoto" ng-src="{{image}}" />
+</div>
+
+<hr>
+
+<div ng-repeat="exif in exifData" ng-show="status" class="row">
+  <div class="col-sm-6">
+    <p class="text-right"><strong>{{exif.label}}</strong><p>
+  </div>
+  <div class="col-sm-6">
+    {{exif.raw._content}}
+  </div>
+</div>
+
+<div class="alert alert-warning" role="alert" ng-hide="status">
+  {{statusMessage}}
+</div>
